@@ -1,0 +1,141 @@
+/* Algemene opmaak */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    display: grid;
+    grid-template-rows: 20vh 70vh 10vh; /* Hoogteverdeling voor header, hoofdinhoud en voettekst */
+    grid-template-columns: 20% 80%; /* Breedteverdeling voor navigatie en hoofdinhoud */
+    grid-template-areas:
+        "header header"
+        "nav main"
+        "footer footer";
+}
+
+/* Hoogte en scrollgedrag */
+html, body {
+    height: 100%;
+    overflow: hidden; /* Voorkomt scrollen van de pagina */
+}
+
+/* Opmaak van de header */
+header {
+    grid-area: header; /* Plaatsing in het gridgebied 'header' */
+    background-color: #d72504;
+    padding: 20px;
+    color: white;
+}
+
+/* Opmaak van de navigatie */
+nav {
+    grid-area: nav; /* Plaatsing in het gridgebied 'nav' */
+    background-color: #8B8B8B;
+    padding: 20px;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    margin-bottom: 30px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+}
+
+/* Opmaak van de hoofdinhoud */
+main {
+    grid-area: main; /* Plaatsing in het gridgebied 'main' */
+    background-color: #E7E7E7;
+    padding: 20px;
+    overflow: auto; /* Toegevoegd om te kunnen scrollen indien nodig */
+}
+
+/* Opmaak van de voettekst */
+footer {
+    grid-area: footer; /* Plaatsing in het gridgebied 'footer' */
+    background-color: #d72504;
+    padding: 20px;
+    text-align: center;
+    color: white;
+}
+
+/* Specifieke opmaak voor inlogtekst */
+.inlogtekst {
+    color: #d72504;
+    padding: 10px;
+}
+
+/* Opmaak van tabellen */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+th, td {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+/* Opmaak voor foutmeldingen */
+.error-message {
+    color: #d72504;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+/* Opmaak voor knoppen */
+input[type="submit"],
+button {
+    background-color: #d72504;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+input[type="submit"]:hover {
+    background-color: #b21e03; /* donkerder rood bij hover */
+}
+
+/* Donkergrijze knoppen voor "Inloggen" en "Uitloggen" */
+input[type="submit"][value="Login"],
+input[type="submit"][value="Uitloggen"] {
+    background-color: #333333;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 0;
+}
+
+input[type="submit"][value="Login"] {
+    margin-top: 10px;
+}
+
+/* Stijl voor alle links behalve die in de navigatie */
+a:not(nav a) {
+    background-color: #d72504;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    display: inline-block;
+    margin-right: 10px;
+    margin-bottom: 5px;
+}
